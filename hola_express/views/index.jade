@@ -1,0 +1,32 @@
+html
+	head
+		title un saludo para el cumpleañero en nodeJS
+	body
+		- var arreglo = [1,2,3,4,5];
+		- for (var i = arreglo.length - 1; i >= 0; i--)
+			//mostrar una variables con formato hml
+			//p!= "<h1>"+arreglo[i]+"</h1>"
+
+			//conatenar un texto html con una variable se hace con #{} todo lo que esta dentro de eso se ejecuta como JS.
+			//h1 Hola #{arreglo[i]}
+			
+			//colocar etiquetas con un texto
+			//p.
+			//	hola haz click en #[a(href="http://www.proteinlab.cl") en este link ] por favor
+			
+			//-if(arreglo[i]>3)
+			//	p!= arreglo[i]
+			
+			//if arreglo[i]>2
+			//	p!=arreglo[i]
+
+			case arreglo[i]
+				when 1 
+					p el item es 1
+				when 2
+					p el item es 2
+				default
+					p el item no es ninguno
+
+		//each item in arreglo
+		//	p=item
