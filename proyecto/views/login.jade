@@ -1,3 +1,9 @@
 extends ./layout.jade
 block contenido
   form(action="/users", method="POST")
+    div
+      label(for="email") Email
+      input(type="text", name="email",placeholder="email")
+    div
+      label(for="password") Password
+      input(type="password", name="password",placeholder="password")
