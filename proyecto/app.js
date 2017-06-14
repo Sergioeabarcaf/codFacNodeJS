@@ -1,11 +1,11 @@
 var express = require("express");
 var app = express();
 
-app.use(express.static('public'));
+app.use("/estatico",express.static('public'));
 
 app.set("view engine","jade");
 
-app.get("/estatico",function(req,res){
+app.get("/",function(req,res){
 	res.render("index");
 });
 
