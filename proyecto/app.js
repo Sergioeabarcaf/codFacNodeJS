@@ -15,4 +15,10 @@ app.get("/login",function(req,res){
 	res.render("login");
 });
 
+app.post("/users",function(req,res){
+	console.log("Password: " + req.body.password);
+	console.log("Email: " + req.body.email);
+	res.send("Recibimos tus datos")
+});
+
 app.listen(8080);
