@@ -6,7 +6,8 @@ var app = express();
 mongoose.connect{"mongodb://localhost/fotos"};
 
 var userSchemaJSON = {
-
+	email:String,
+	password:String
 };
 
 app.use("/estatico",express.static('public'));
