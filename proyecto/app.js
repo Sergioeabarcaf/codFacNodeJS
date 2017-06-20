@@ -1,10 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var mongoose = require("mogoose");
+var mongoose = require("mongoose");
 var app = express();
 var Schema = mongoose.Schema;
 
-mongoose.connect{"mongodb://localhost/fotos"};
+mongoose.connect("mongodb://localhost/fotos");
 
 var userSchemaJSON = {
 	email:String,
