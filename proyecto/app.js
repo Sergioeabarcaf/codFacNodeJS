@@ -29,9 +29,10 @@ app.get("/login",function(req,res){
 });
 
 app.post("/users",function(req,res){
-	console.log("Password: " + req.body.password);
-	console.log("Email: " + req.body.email);
-	res.send("Recibimos tus datos")
+	var user = new User({email: req.body.email, password: req.body.password});
+	user.save(function(){
+		res.send("Guardamos tus datos")
+	});
 });
 
 app.listen(8080);
