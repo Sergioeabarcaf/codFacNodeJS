@@ -1,10 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
+var User = requier("./models/user")
 var app = express();
-var Schema = mongoose.Schema;
-
-mongoose.connect("mongodb://localhost/fotos");
 
 app.use("/estatico",express.static('public'));
 app.use(bodyParser.json());
