@@ -6,15 +6,6 @@ var Schema = mongoose.Schema;
 
 mongoose.connect("mongodb://localhost/fotos");
 
-var userSchemaJSON = {
-	email:String,
-	password:String
-};
-
-var user_schema = new Schema(userSchemaJSON);
-
-var User = mongoose.model("User",user_schema);
-
 app.use("/estatico",express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
