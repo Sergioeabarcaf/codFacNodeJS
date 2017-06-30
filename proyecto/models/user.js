@@ -13,9 +13,9 @@ var user_schema = new Schema({
 });
 
 user_schema.virtual("password_confirmation").get(function(){
-  return this.password_confirmation;
+  return this.pass_confim;
 }).set(function(password){
-  this.password_confirmation = password;
+  this.pass_confim = password;
 });
 
 
