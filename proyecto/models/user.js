@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost/fotos");
+mongoose.connect("mongodb://localhost/fotos", { useMongoClient: true });
 
 var user_schema = new Schema({
   name: String,
