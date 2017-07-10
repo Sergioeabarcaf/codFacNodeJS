@@ -6,6 +6,8 @@ mongoose.connect("mongodb://127.0.0.1/fotos");
 
 var tipo_sexo = ["M", "F"];
 
+var email_match = [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Coloca un email valido"]
+
 
 var user_schema = new Schema({
   name: String,
