@@ -26,6 +26,9 @@ app.post("/users",function(req,res){
 											});
 	console.log(user.password_confirmation);
 	user.save(function(err){
+		if(err){
+			cosole.log(String(err));
+		}
 		res.send("Guardamos tus datos")
 	});
 });
