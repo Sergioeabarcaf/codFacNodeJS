@@ -17,7 +17,7 @@ var user_schema = new Schema({
             minlength: [8,"el tamaño minimo es de 8 caracteres"]
             },
   password: {type: String,
-            minlength: [8, "el tamaño minimo es de 8 caracteres"]
+            minlength: [8, "el tamaño minimo es de 8 caracteres"],
             validate: {
               validator: function(p){
                 return this.password_confirmation == p;
