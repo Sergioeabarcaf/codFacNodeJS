@@ -13,8 +13,7 @@ var user_schema = new Schema({
   name: String,
   username: {type: String,
             require: true,
-            maxlength: [50,"El tamaño maximo es de 50 caracteres"],
-            minlength: [8,"el tamaño minimo es de 8 caracteres"]
+            maxlength: [50,"El tamaño maximo es de 50 caracteres"]
             },
   password: {type: String,
             minlength: [8, "el tamaño minimo es de 8 caracteres"],
