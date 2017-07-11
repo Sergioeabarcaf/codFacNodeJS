@@ -11,12 +11,32 @@ var email_match = [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Coloca un e
 
 var user_schema = new Schema({
   name: String,
-  username: {type: String, require: true, maxlength: [50,"El tamaño maximo es de 50 caracteres"], minlength: [8,"el tamaño minimo es de 8 caracteres"]},
-  password: {type: String, minlength: [8, "el tamaño minimo es de 8 caracteres"]},
-  age: {type: Number, min: [1,"la edad minima es de 1 año"], max: [100,"la edad maxima es de 100 años"]},
-  email: {type: String, require: "El correo es obligatorio", match: email_match},
+  username: {type: String,
+            require: true,
+            maxlength: [50,"El tamaño maximo es de 50 caracteres"],
+            minlength: [8,"el tamaño minimo es de 8 caracteres"]
+            },
+  password: {type: String,
+            minlength: [8, "el tamaño minimo es de 8 caracteres"]
+            validate: {
+              validator: function(p){
+                return this.password_confirmation == p;
+                },
+              message: "Las contraseñas no son iguales"
+              }
+            },
+  age: {type: Number,
+        min: [1,"la edad minima es de 1 año"],
+        max: [100,"la edad maxima es de 100 años"]
+        },
+  email: {type: String,
+          require: "El correo es obligatorio",
+          match: email_match
+          },
   date_of_birth: Date,
-  sexo: {type: String, enum:{values: tipo_sexo, message:"Solo se aceptan valores de M y F"}}
+  sexo: {type: String,
+          enum:{values: tipo_sexo, message:"Solo se aceptan valores de M y F"}
+          }
 });
 
 user_schema.virtual("password_confirmation").get(function(){
