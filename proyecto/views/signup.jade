@@ -1,17 +1,21 @@
 extends ./layout.jade
 block contenido
-  form(action="/users",method="POST")
-    div(class="form-group")
-      label(for="email") Email
-      input(type="text", name="email", placeholder="email@email.com", class="form-control")
-    div
-      label(for="username") Nombre de usuario
-      input(type="text", name="username",placeholder="Nombre de usuario", class="form-control")
-    div
-      label(for="password") Contraseña
-      input(type="password", name="password",placeholder="password", class="form-control")
-    div
-      label(for="password") Confirma tu contraseña
-      input(type="password", name="password_confirmation",placeholder="password", class="form-control")
-    div
-      input(type="submit" value="Iniciar sesión" class="btn btn-info")
+  div(class="col-md-6 center-block remove-float big-top-space")
+    form(action="/users",method="POST")
+      div(class="form-group")
+        label(for="email") Email
+        input(type="text", name="email", placeholder="email@email.com", class="form-control")
+      div
+        label(for="username") Nombre de usuario
+        input(type="text", name="username",placeholder="Nombre de usuario", class="form-control")
+      div
+        label(for="password") Contraseña
+        input(type="password", name="password",placeholder="password", class="form-control")
+      div
+        label(for="password") Confirma tu contraseña
+        input(type="password", name="password_confirmation",placeholder="password", class="form-control")
+      div(class="row small-top-space")
+        div(class="col-xs-12 col-sm-8 col-md-6")
+          input(type="submit" value="Crear cuenta" class="btn btn-info")
+        div(class="col-xs-12 col-sm-8 col-md-6 text-right")
+          a(href="/login") Ya tengo cuenta

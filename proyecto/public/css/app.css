@@ -5,3 +5,11 @@
 .remove-float{
   float: none;
 }
+
+.big-top-space{
+  margin-top: 15em;
+}
+
+.small-top-space{
+  margin-top: 2em;
+}
