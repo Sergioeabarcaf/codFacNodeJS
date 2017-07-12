@@ -56,4 +56,7 @@ app.post("/sessions",function(req,res){
 		res.send("hola mundo");
 	});
 });
+
+app.use("/app",router_app);
+
 app.listen(8080);
