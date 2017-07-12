@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var User = require("./models/user").User;
+var session = require("express-session");
+
 var app = express();
 
 app.use("/estatico",express.static('public'));
