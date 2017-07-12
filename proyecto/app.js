@@ -41,6 +41,9 @@ app.post("/users",function(req,res){
 });
 
 app.post("/sessions",function(req,res){
-
+	User.find({email: req.body.email,password: req.body.password},function(err,docs){
+		console.log(docs);
+		res.send("Hola mundo");
+	});
 });
 app.listen(8080);
