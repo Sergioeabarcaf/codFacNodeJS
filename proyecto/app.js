@@ -9,7 +9,9 @@ app.use("/estatico",express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
-	secret: "5454sddsfdfsfdg54dfsfs"
+	secret: "5454sddsfdfsfdg54dfsfs",
+	resave: false,
+	saveUninitialized: false
 }));
 
 app.set("view engine","jade");
