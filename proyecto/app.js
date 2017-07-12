@@ -22,7 +22,6 @@ app.get("/signup",function(req,res){
 app.get("/login",function(req,res){
 		res.render("login");
 	});
-});
 
 app.post("/users",function(req,res){
 	var user = new User({email: req.body.email,
@@ -44,5 +43,4 @@ app.post("/users",function(req,res){
 app.post("/sessions",function(req,res){
 
 });
-
 app.listen(8080);
