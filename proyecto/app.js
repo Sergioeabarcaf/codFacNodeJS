@@ -12,12 +12,16 @@ app.get("/",function(req,res){
 	res.render("index");
 });
 
-app.get("/login",function(req,res){
+app.get("/signup",function(req,res){
 	User.find(function(err,doc){
 		console.log(doc);
-		res.render("login");
+		res.render("signup");
 	});
 });
+
+app.get("/login",function(req,res){
+		res.render("login");
+	});
 
 app.post("/users",function(req,res){
 	var user = new User({email: req.body.email,
@@ -26,12 +30,20 @@ app.post("/users",function(req,res){
 											password_confirmation: req.body.password_confirmation
 											});
 	console.log(user.password_confirmation);
-	user.save(function(err){
+
+	user.save().then(function(us){
+		res.send("Se guardo exitosamente el usuario");
+	},function(err){
 		if(err){
-			console.log(String(err));
-		}
-		res.send("Guardamos tus datos")
+				console.log(String(err));
+			}
 	});
 });
 
+app.post("/sessions",function(req,res){
+	User.find({email: req.body.email,password: req.body.password},function(err,docs){
+		console.log(docs);
+		res.send("Hola mundo");
+	});
+});
 app.listen(8080);
