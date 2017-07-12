@@ -26,11 +26,13 @@ app.post("/users",function(req,res){
 											password_confirmation: req.body.password_confirmation
 											});
 	console.log(user.password_confirmation);
-	user.save(function(err){
+
+	user.save().then(function(us){
+		res.send("Se guardo exitosamente el usuario");
+	},function(err){
 		if(err){
-			console.log(String(err));
-		}
-		res.send("Guardamos tus datos")
+				console.log(String(err));
+			}
 	});
 });
 
