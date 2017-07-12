@@ -41,4 +41,8 @@ app.post("/users",function(req,res){
 	});
 });
 
+app.post("/sessions",function(req,res){
+
+});
+
 app.listen(8080);
